@@ -1,39 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
+
+body {
+    color: black;
+}
+
 .mainFramea {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3vmin;
+  max-height: 75vh;
+  padding: 0 3vw;
 }
 
-.cart-catalog{
+.catalogLista {
   margin: 2vh 0 0 0;
-  height: 75vh;
-  width: 60vw;
   overflow-y: scroll;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  max-height: inherit;
+  flex: 2;
 }
 
-.cart-catalog > * {
+.catalogLista > * {
   margin: 2vh;
 }
 
-.cart-catalog::-webkit-scrollbar {
+.catalogLista > h2 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.catalogLista::-webkit-scrollbar {
   width: 0;
   visibility: hidden;
 }
 
-.cart-catalog::-webkit-scrollbar-thumb {
+.catalogLista::-webkit-scrollbar-thumb {
   width: 0;
   visibility: hidden;
 }
 
 .totalInfo {
-  display: flex;
   flex-direction: column;
   margin: 2vh;
-  width: max-content;
-  font-size: 1.5rem;
+}
+
+.finalForm {
+    flex: 1;
+    overflow-y: scroll;
+    max-height: inherit;
+    padding: 4vh 2vw;
 }
 
 .checkoutBtn {
@@ -49,6 +66,7 @@
   align-items: center;
   padding: 1vh;
   cursor: pointer;
+  width: 100%;
 }
 
 .textInfo {

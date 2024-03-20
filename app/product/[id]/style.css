@@ -1,0 +1,15 @@
+.mainbod {
+    display: flex;
+    width: 85vw;
+    margin: 2vh 7.5vw;
+    height: 75vh;
+    justify-content: space-evenly;
+    position: relative;
+    gap: 3vw;
+}
+
+@media (max-width: 600px) {
+  .mainbod {
+    flex-direction: column; /* Change to column layout on screens less than 600px wide */
+  }
+}

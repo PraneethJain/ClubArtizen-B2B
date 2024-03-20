@@ -1,105 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
 
-.mainLogo{
-    height: 14vh;
-    z-index: 10;
+.mainLogo {
+  aspect-ratio: 1/1;
+  scale: 1.2;
+  z-index: 10;
 }
 
-.mainFrame{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
+.mainFrame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
-.mainTitle{
-    font-family: "Palanquin", sans-serif;
-    color: black;
-    font-weight: 800;
-    font-size: 17vh;
-    z-index: 10;
+.mainTitle {
+  font-family: "Palanquin", sans-serif;
+  color: black;
+  font-weight: 800;
+  font-size: 17vh;
+  z-index: 10;
 }
 
-.subTitle{
-    font-family: "Pacifico", cursive;
-    color: black;
-    font-size: 4vh;
-    z-index: 10;
+.subTitle {
+  font-family: "Pacifico", cursive;
+  font-size: 4vh;
+  z-index: 10;
 }
 
-.searchbar{
-    color: black;
-    width: 60vw;
-    height: 5vh;
-    z-index: 10;
-    padding-left: 1.37vh;
-    border-radius: 2.73vh;
-    outline: 0.07vh solid rgb(197, 197, 197);
-    background-color: white;
-}
-.searchform{
-    z-index: 10;
-    color: black;
-    display: flex;
-    width: 60vw;
-    height: max-content;
-    display: flex;
-    align-items: center;
-    position: relative;
-    margin-top: 7vh;
-}
-.icon_search{
-    position: absolute;
-    right: 1.37vh;
-    z-index: 20;
-    cursor: pointer;
-    font-size: 4vh;
+.searchbar {
+  color: black;
+  width: 60vw;
+  height: 5vh;
+  z-index: 10;
+  padding-left: 1.37vh;
+  border-radius: 2.73vh;
+  outline: 0.07vh solid rgb(197, 197, 197);
+  background-color: white;
 }
 
-.backgroundImage{
-    filter:  opacity(0.35);
-    height: 90vh;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 5;
+.icon_search {
+  position: absolute;
+  right: 1.37vh;
+  z-index: 20;
+  cursor: pointer;
+  font-size: 4vh;
 }
 
-.backgroundImage2{
-    filter:  opacity(0.35);
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 5;
+.backgroundImage {
+  filter: opacity(0.35);
+  height: 90vh;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 5;
 }
 
-/* .translucentBackdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(152, 152, 152, 0.35);
-    z-index: 5;
-} */
-
+.backgroundImage2 {
+  filter: opacity(0.35);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 5;
+}
 
 @media screen and (max-width: 1400px) {
-    .mainTitle{
-        font-size: 6vh;
-    }
-    .backgroundImage{
-        width: 80vw;
-        height: 60vw;
-    }
-    .subTitle{
-        font-size: 2vh;
-    }
-    .backgroundImage2{
-        width: 70vw;
-        height: 40vw;
-    }
+  .mainTitle {
+    font-size: 6vh;
+  }
+  .backgroundImage {
+    width: 80vw;
+    height: 60vw;
+  }
+  .subTitle {
+    font-size: 2vh;
+  }
+  .backgroundImage2 {
+    width: 70vw;
+    height: 40vw;
+  }
 }

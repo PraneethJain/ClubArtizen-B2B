@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
+
+.ProductCard {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    max-height: 25vmin;
+    gap: 2vmin;
+}
+
+.ProductImage {
+    flex: 1.5;
+}
+
+.ProductImage > img {
+    width: auto;
+    max-height: 100%;
+    border-radius: 15%;
+}
+
+.ProductInfo {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductMoreInfo {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 2vmin;
+}
+
+.StockPriceInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: right;
+    align-content: first baseline;
+}
+
+.ProductCustomisations select, .ProductCustomisations input {
+    border: 1px solid var(--grey);
+    border-radius: 0.2rem;
+    padding: 0.2rem;
+    margin: 0.1rem 1rem;
+    max-height: 2rem;
+}
+
+.ProductCustomisations {
+    flex: 1;
+    margin-left: 2vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh;
+    align-items: center;
+}
+
+.ProductTotalPrice {
+    font-weight: bold;
+}
+
+h3.ProductTitle {
+    font-size: 4vmin;
+    text-overflow: ellipsis;
+    max-height: 10vh;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 3vmin;
+    text-overflow: ellipsis;
+    max-height: 6vh;
+    font-weight: 400;
+}

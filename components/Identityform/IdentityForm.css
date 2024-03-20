@@ -1,0 +1,11 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 2vmin;
+}
+
+.EnquiryForm input, .EnquiryForm textarea {
+    border: 1px solid var(--grey);
+    border-radius: 1vh;
+    padding: 1vh;
+}

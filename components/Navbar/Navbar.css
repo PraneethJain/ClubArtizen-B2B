@@ -1,46 +1,45 @@
 .NavbarMain {
-    height: 9vh;
-    width: 100vw;
+    --header-total-height: 10vh;
+    --header-top-height: 3vh;
+    --header-middle-height: 6vh;
+    --header-low-height: 10vh;
+
+    height: var(--header-total-height);
+    width: 100%;
+}
+
+.NavbarMain > div {
+    top: 0;
+    left: 0;
+    position: fixed;
 }
 
 .TopBar {
-    height: 3vh;
+    height: var(--header-top-height);
     background-color: var(--grey);
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 3;
     opacity: 0.5;
 }
 
 .MidBar {
-    height: 6vh;
+    height: var(--header-middle-height);
     background-color: var(--grey);
-    position: fixed;
-    top: 0vh;
-    left: 0;
     width: 100%;
     z-index: 2;
     opacity: 0.4;
 }
 
 .LowBar {
-    height: 9vh;
+    height: var(--header-low-height);
     background-color: var(--grey);
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 1;
     opacity: 0.3;
 }
 
-.Jaalidiv{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 9vh;
+.Jaalidiv {
+    height: var(--header-total-height);
     width: 100%;
     background-image: url("./jaali.png");
     background-size: 143.08vh;
@@ -49,37 +48,29 @@
     z-index: 4;
 }
 
-.NavCont{
+.NavCont {
     display: flex;
     width: 100vw;
-    height: 9vh;
+    height: 10vh;
     z-index: 5;
     justify-content: space-between;
     align-items: center;
 }
 
-.NavCont{
-    display: flex;
-    width: 100vw;
-    height: 9vh;
-    z-index: 5;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.CAlogo{
-    margin: 0 2vw 0 2vw;
+.CAlogo {
+    margin: 2vw 2vh;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 10;
-    height: 6.5vh;
+    height: 8vh;
+    width: 8vw;
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.searchbar{
+.searchbar {
     color: black;
     width: 60vw;
     height: 5vh;
@@ -90,18 +81,21 @@
     background-color: white;
 }
 
-.MyCart{
+.MyCart {
     height: 7.5vh;
     width: 8.5vh;
     margin: 0 2vw 0 2vw;
-    background-image: url("./cart_image.png");
-    background-size: contain;
-    background-repeat: no-repeat;
     z-index: 10;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-.searchform{
+.MyCart > svg {
+    font-size: clamp(20px, 8vmin, 60px);
+    color: var(--grey_dark)
+}
+
+.searchform {
     z-index: 10;
     color: black;
     display: flex;
@@ -111,10 +105,14 @@
     align-items: center;
     position: relative;
 }
-.icon_search{
+
+.icon_search {
     position: absolute;
-    right: 1.37vh;
+    right: 1vw;
     z-index: 20;
-    cursor: pointer;
-    font-size: 4vh;
+}
+
+.NavbarMain .logoimg {
+    height: clamp(20px, 8vmin, 100px);
+    width: clamp(20px, 8vmin, 100px);
 }

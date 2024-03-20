@@ -48,14 +48,15 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(121, 121, 121, 0.5);
+  background-color: rgb(56, 56, 56, 0.85);
   z-index: 15;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   transition: opacity 1s ease; /* Transition for the opacity property */
   opacity: 0; /* Initially hidden */
+  color: white;
 }
 
 .imageContainer:hover .backdropFilter {
@@ -73,15 +74,20 @@
 }
 
 .cartImage {
-  width: 20%;
-  height: auto;
   margin: 0 1vh 0 1vh;
+  height: 4vh;
   cursor: pointer;
   z-index: 15;
 }
 
 .priceContainer {
-  color: white;
+  margin: 1vh 0 1vh 2vh;
+  font-size: 1.7vh;
+  font-weight: 500;
+  z-index: 15;
+}
+
+.priceContainer2 {
   margin: 1vh 0 1vh 2vh;
   font-size: 1.7vh;
   font-weight: 500;
@@ -89,17 +95,18 @@
 }
 
 .qtyText {
-  color: white;
   font-size: 1.7vh;
   font-weight: 500;
 }
 
 .cartContainer {
-  width: 25vh;
   display: flex;
+  margin-left: -0.75vh;
+  width: 25vh;
   justify-content: space-evenly;
   align-items: center;
   z-index: 15;
+  margin-bottom: 1vh;
 }
 
 .moreText {
@@ -109,4 +116,10 @@
   padding: 1vh;
   cursor: pointer;
   border-radius: 1.19vh;
+}
+
+.imageLogo {
+  color: white;
+  font-size: 2.7vh;
+  cursor: pointer;
 }

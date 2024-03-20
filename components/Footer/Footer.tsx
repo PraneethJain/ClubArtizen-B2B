@@ -1,18 +1,24 @@
 import React from "react";
-import "./Footer.css";
 import Image from "next/image";
-import { Instagram, Facebook, YouTube } from "@mui/icons-material";
+
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+
 import logo_img from "@/public/ca-logo.webp";
+
+import "./Footer.css";
+
 const Navbar = () => {
   return (
     <div className="FooterMain">
       <div className="TopBarFoot"></div>
       <div className="MidBarFoot"></div>
       <div className="LowBarFoot"></div>
-      <div className="JaalidivFoot"></div>
-      <div className="logo_cont_bod">
-        <div className="logo_cont">
-          <div className="CAlogofoot">
+      <div className="JaaliDivFoot"></div>
+      <div className="LogoContBody">
+        <div className="LogoCont">
+          <div className="CALogoFoot">
             <Image
               src={logo_img}
               alt="logo"
@@ -20,19 +26,19 @@ const Navbar = () => {
               width="90"
             ></Image>
           </div>
-          <div className="logoitem" id="val1">
+          <div className="LogoItem" id="logo-ig">
             <a href="https://www.instagram.com/clubartizen/">
-              <Instagram className="logos" />
+              <InstagramIcon />
             </a>
           </div>
-          <div className="logoitem" id="val2">
+          <div className="LogoItem" id="logo-fb">
             <a href="https://www.facebook.com/clubartizen">
-              <Facebook className="logos" />
+              <FacebookIcon />
             </a>
           </div>
-          <div className="logoitem" id="val3">
+          <div className="LogoItem" id="logo-yt">
             <a href="https://www.youtube.com/@clubartizen">
-              <YouTube className="logos" />
+              <YouTubeIcon />
             </a>
           </div>
         </div>

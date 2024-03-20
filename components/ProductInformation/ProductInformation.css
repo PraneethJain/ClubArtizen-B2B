@@ -1,52 +1,56 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
 
 .mainframe {
+    flex: 1;
   display: flex;
   flex-direction: column;
-  height: 70vh;
-  width: 40vw;
   overflow-y: scroll;
   overflow-x: hidden;
   align-items: center;
 }
 
 .Categories {
-  align-self: flex-end;
+  align-self: center;
   display: flex;
   flex-wrap: wrap;
-  width: 23vw;
+  padding-left: 3rem;
   height: 50vh;
-  margin-top: 3vh;
+  margin: 3vh;
 }
 
 .catvalitem {
   font-size: 2.19vh;
   font-family: Arial, Helvetica, sans-serif;
   height: max-content;
-  border-radius: 1.36vh;
-  color: var(--grey_dark);
+  border-radius: 3rem;
+  color: white;
   border: solid var(--grey_light) 0.13vh;
-  padding: 0 0.68vh 0 0.68vh;
+  padding: 0.2rem 1rem;
   margin: 0 0.34vh 0.27vh 0.34vh;
   width: max-content;
-  background-color: var(--grey_mid);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .infomenu {
-  width: 35vw;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  align-items: center;
   height: max-content;
-  margin-top: 3vh;
+  gap: 3vmin;
+  padding: 0 3vmin;
 }
 
+
+@media (max-width: 600px) {
+  .infomenu {
+    flex-direction: column; /* Change to column layout on screens less than 600px wide */
+  }
+}
+
+
 .StockForm {
-  height: 10vh;
-  color: black;
-  width: 12vw;
-  display: grid;
+    flex: 1;
+    color: black;
+    display: grid;
 }
 
 .PriceMenu {
@@ -54,7 +58,6 @@
   font-size: 2.19vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: scroll;
-  width: 20vw;
 }
 
 .priceval {
@@ -82,24 +85,22 @@
 
 .QtyNum {
   font-size: 2.19vh;
-  padding: 1vh;
-  height: 3.5vh;
-  display: flex;
+  padding: 1vmin;
   width: 75%;
   margin: 0 0 0 0;
   background-color: var(--grey_very_light);
-  width: 6.84vh;
   grid-column: 1/2;
+  height: 5vh;
 }
 
 .CartButton {
   font-size: 2.19vh;
-  height: 3.5vh;
   width: 100%;
-  background-color: black;
+  background-color: var(--grey_dark);
   color: white;
-  padding: 0.27vh;
   grid-column: 2/5;
+  height: 5vh;
+  padding: 0 1vmin;
 }
 
 #shipping {
@@ -107,10 +108,7 @@
 }
 
 .maintitle {
-  width: 35vw;
   font-size: 4.38vh;
-  display: flex;
-  justify-content: flex-end;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: black;
@@ -119,7 +117,6 @@
 .StoryCont {
   font-size: 2.19vh;
   padding: 1vh 3vh 1vh 3vh;
-  width: 35vw;
   margin: 0 0 7vh 0;
   height: max-content;
   background-color: var(--grey_very_light);
@@ -134,7 +131,6 @@
 .descriptionBod {
   font-size: 2.19vh;
   padding: 1vh 3vh 1vh 3vh;
-  width: 35vw;
   height: max-content;
   background-color: var(--grey_very_very_light);
   margin: 5vh 0 7vh 0;

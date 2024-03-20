@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./style.css";
 
-const Homepage = () => {
+const HomePage = () => {
   return (
     <div>
       <div className="translucentBackdrop"></div>
@@ -24,10 +24,12 @@ const Homepage = () => {
         />
         <Image src={logo_img} className="mainLogo" alt="logo" />
         <div className="mainTitle">CLUB ARTIZEN</div>
-        <div className="subTitle">for the beauty of craft inspired living</div>
+        <div className="subTitle text-gray-600">
+          for the beauty of craft inspired living
+        </div>
         <Link
           href="/catalog"
-          className="mt-8 text-xl text-black z-10 bg-slate-300 p-4 rounded bg-opacity-70"
+          className="mt-12 text-xl text-black z-10 bg-slate-300 p-4 rounded-[1.5rem] bg-opacity-70 border-2 border-gray-900"
         >
           View Product Catalogue
         </Link>
@@ -36,4 +38,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default HomePage;

@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
+
+.verification {
+    color: black;
+    height: 74vh;
+    margin: 5vmin;
+
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    margin: 4vh;
+}
+
+.verification h1 {
+    font-size: 4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
+
+.verification input {
+    border: 1px solid var(--grey);
+    border-radius: 1vh;
+    padding: 1vh;
+    margin: 0.5vh;
+}
+
+.verification-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: scroll;
+}
+
+.verification-email {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+}
+
+.verification {
+    font-size: 1.25rem;
+}
+
+.verification-otp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.verification-otp button {
+    flex: 1;
+}
+
+.verification button, .verification a {
+  margin: 2vmin;
+  background-color: var(--grey_dark);
+  color: white;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5vh;
+  border-radius: 1.7vh;
+}
+
+.verification button {
+    height: 6vh;
+}
+
+.verification a {
+    padding-left: 3vh;
+    padding-right: 3vh;
+}
+
+@media screen and (max-width: 768px) {
+    .verification-form {
+	grid-template-columns: 1fr;
+    }
+
+    .verification-email {
+	width: unset;
+    }
+}
+
+.verification-form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 2vmin;
+}

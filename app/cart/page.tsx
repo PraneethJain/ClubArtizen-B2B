@@ -1,64 +1,74 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from "react";
-import Cartcard from "@/components/Cartcard/Cartcard";
+import React, { useState, useEffect } from "react";
+import ProductCard from "@/components/ProductCard/ProductCard";
+import Link from "next/link";
+import type { Cart } from "../lib";
 import "./style.css";
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
-const page = () => {
-  let curCart: [string, string, number, number, number, number][] = [];
-  const localCart = localStorage.getItem("cart")
-  if (localCart) {
-    const cartJson = JSON.parse(localCart)
-    for (const key in cartJson) {
-      let jsonResp = cartJson[key]
-      curCart.push(
-        [
-          key,
-          jsonResp["product_name"],
-          jsonResp["price"],
-          jsonResp["quantity"],
-          jsonResp["GST"],
-          jsonResp["shipping"],
-        ]
-      )
-    }
-  }
-  const [cart, setCart] = useState<[string, string, number, number, number, number][]>(curCart)
+const CartPage = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const [cart, setCart] = useState<Cart>({});
+
+  useEffect(() => {
+    setCart(JSON.parse(localStorage.getItem("cart") ?? "{}"))
+  }, [])
 
   return (
     <div>
-      <nav><Navbar/></nav>
-      <div className="mainFrame">
-        <div className="catalogList">
-          {cart.map(([product_id, product_name, price, quantity_selected, GST, shipping]) => (
-            <Cartcard
-              product_id={product_id}
-              product_name={product_name}
-              price={price}
-              quantity_selected={quantity_selected}
-              GST={GST}
-              shipping={shipping}
-              setCart={setCart}
-            />
-          ))}
-
+      <Navbar searchValue={searchValue} setSearchValue={setSearchValue} />
+      <div className="mainFramea">
+        <div className="cart-catalog">
+          {
+            Object.values(cart).filter(({ product_name }) => {
+              const productName = product_name.toLowerCase();
+              const searchWords = searchValue.toLowerCase().split(/\s+/);
+              for (const searchWord of searchWords) {
+                if (!productName.includes(searchWord)) {
+                  return false;
+                }
+              }
+              return true;
+            }).map(({ product_id, product_story, product_story_title, product_name, price, quantity, GST, image_src, description, tags, Customizations_Available, Customization_Comments, Customization_Chosen }) =>
+              <ProductCard
+                key={product_id}
+                product_id={product_id}
+                title={product_name}
+                price={price}
+                quantity_selected={quantity}
+                image_src={image_src}
+                description={description}
+                tags={tags}
+                Customizations_Available={Customizations_Available}
+                Customization_Comments={Customization_Comments}
+                Customization_Chosen={Customization_Chosen}
+                setCart={setCart}
+                GST={GST}
+                product_story={product_story}
+                product_story_title={product_story_title}
+              />
+            )
+          }
         </div>
         <div className="totalInfo">
           <div className="textInfo">
-            <div>Delivery:</div> <div className="curInfo">&#8377;100</div>
+            <div>Delivery:</div> <div className="curInfo">At rate</div>
           </div>
           <div className="textInfo">
-            <div>Total:</div> <div className="curInfo"> &#8377;1000</div>
+            <div>Total:</div> <div className="curInfo"> &#8377;{
+              Object.values(cart)
+                .map(({ price, quantity }) => price * quantity)
+                .reduce((acc, rec) => acc + rec, 0)}</div>
           </div>
-          <div className="checkoutBtn">Checkout</div>
+          <Link href={{ pathname: "/verification" }} className="checkoutBtn">Checkout</Link>
         </div>
       </div>
-      <footer><Footer/></footer>
+      <Footer />
     </div>
   );
 };
 
-export default page;
+export default CartPage;

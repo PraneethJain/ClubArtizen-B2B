@@ -6,75 +6,55 @@ interface InformationProps {
   product_name: string;
   price: number;
   GST: number;
-  shipping: number;
-  stock: number;
   description: string;
   story: string;
   story_title: string;
-  story_link: string;
-  categories: string[];
-  color: string;
-  material: string;
+  tags: string[];
   dimensions: string;
-  state: string;
-  made_by: string;
-  care_instructions: string;
-  note: string;
+  product_id: string;
+  image_src: string;
 }
 
 const Information: React.FC<InformationProps> = ({
   product_name,
   price,
   GST,
-  shipping,
-  stock,
   description,
   story,
   story_title,
-  story_link,
-  categories,
-  color,
-  material,
+  tags,
   dimensions,
-  state,
-  made_by,
-  care_instructions,
-  note,
+  product_id,
+  image_src,
 }) => {
   return (
     <div className="mainframe">
       <div className="maintitle">{product_name}</div>
       <div className="Categories">
-        {categories.map((catv) => (
+        {tags.map((catv) => (
           <div className="catvalitem" key={catv}>
             {catv}
           </div>
         ))}
       </div>
       <div className="infomenu">
-        <Stockval stock={stock} />
+        <Stockval product_story={story} product_story_title={story_title} GST={GST} product_id={product_id} product_name={product_name} price={price} image_src={image_src} description={description} tags={tags} />
 
         <div className="PriceMenu">
           <div className="priceval">
             <div className="pricetext">Price: </div>
-            <div className="priceitem">&#8377;{price}</div>
+            <div className="priceitem">&#8377;{price - GST * price / 100}</div>
           </div>
           <div className="sampletext">per piece excluding GST and shipping</div>
           <div className="priceval">
             <div className="pricetext">GST: </div>
-            <div className="priceitem">&#8377;{GST}</div>
-          </div>
-          <div className="priceval">
-            <div className="pricetext" id="shipping">
-              Shipping:
-            </div>{" "}
-            <div className="priceitem">&#8377;{shipping}</div>
+            <div className="priceitem">&#8377;{GST * price / 100}</div>
           </div>
           <div className="priceval">
             <div className="pricetext">Total: </div>
             <div className="priceitem">
               &#8377;
-              {price + GST + shipping}
+              {price}
             </div>
           </div>
         </div>
@@ -83,11 +63,6 @@ const Information: React.FC<InformationProps> = ({
       <div className="StoryCont">
         <div className="storytitle">{story_title}</div>
         <div className="story">{story}</div>
-        {story_link && (
-          <div className="storylink">
-            <a href={story_link}>Read More</a>
-          </div>
-        )}
       </div>
     </div>
   );
