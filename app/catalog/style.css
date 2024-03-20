@@ -1,0 +1,35 @@
+.mainFrame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.catalogList{
+    margin: 2vh 0 0 0;
+    height: 75vh;
+    width: 90vw;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.catalogList > * {
+    margin: 2vh;
+}
+
+.catalogList::-webkit-scrollbar {
+    width: 0;
+    visibility: hidden;
+}
+
+.catalogList::-webkit-scrollbar-thumb {
+    width: 0;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+    .catalogList>* {
+        width: 100%;
+    }
+}

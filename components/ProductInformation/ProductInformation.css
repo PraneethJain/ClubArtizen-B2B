@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
+
+.mainframe {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 40vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  align-items: center;
+}
+
+.Categories {
+  align-self: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  width: 23vw;
+  height: 50vh;
+  margin-top: 3vh;
+}
+
+.catvalitem {
+  font-size: 2.19vh;
+  font-family: Arial, Helvetica, sans-serif;
+  height: max-content;
+  border-radius: 1.36vh;
+  color: var(--grey_dark);
+  border: solid var(--grey_light) 0.13vh;
+  padding: 0 0.68vh 0 0.68vh;
+  margin: 0 0.34vh 0.27vh 0.34vh;
+  width: max-content;
+  background-color: var(--grey_mid);
+}
+
+.infomenu {
+  width: 35vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  height: max-content;
+  margin-top: 3vh;
+}
+
+.StockForm {
+  height: 10vh;
+  color: black;
+  width: 12vw;
+  display: grid;
+}
+
+.PriceMenu {
+  color: black;
+  font-size: 2.19vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: scroll;
+  width: 20vw;
+}
+
+.priceval {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pricetext {
+  font-weight: 600;
+  font-size: 2.19vh;
+}
+
+.sampletext {
+  color: var(--grey_light);
+  font-size: 1.64vh;
+}
+
+.sampletext2 {
+  font-size: 2.19vh;
+  font: "Poppins", sans-serif;
+  font-weight: 600;
+  grid-column: 1/5;
+}
+
+.QtyNum {
+  font-size: 2.19vh;
+  padding: 1vh;
+  height: 3.5vh;
+  display: flex;
+  width: 75%;
+  margin: 0 0 0 0;
+  background-color: var(--grey_very_light);
+  width: 6.84vh;
+  grid-column: 1/2;
+}
+
+.CartButton {
+  font-size: 2.19vh;
+  height: 3.5vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 0.27vh;
+  grid-column: 2/5;
+}
+
+#shipping {
+  margin-bottom: 0.68vh;
+}
+
+.maintitle {
+  width: 35vw;
+  font-size: 4.38vh;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.StoryCont {
+  font-size: 2.19vh;
+  padding: 1vh 3vh 1vh 3vh;
+  width: 35vw;
+  margin: 0 0 7vh 0;
+  height: max-content;
+  background-color: var(--grey_very_light);
+  color: black;
+  font-family: "Poppins", sans-serif;
+  border-radius: 2.05vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.descriptionBod {
+  font-size: 2.19vh;
+  padding: 1vh 3vh 1vh 3vh;
+  width: 35vw;
+  height: max-content;
+  background-color: var(--grey_very_very_light);
+  margin: 5vh 0 7vh 0;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  border-radius: 2.05vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.storytitle {
+  font-weight: 600;
+  font-size: larger;
+  margin: 2vh 0 2vh 0;
+}
+
+.story {
+  margin-bottom: 3vh;
+}
+
+.storylink {
+  background-color: var(--grey_dark);
+  color: white;
+  padding: 0.68vh 0.95vh 0.68vh 0.95vh;
+  border-radius: 2.05vh;
+  width: max-content;
+}
+
+.CategoryList::-webkit-scrollbar,
+.PriceMenu::-webkit-scrollbar,
+.StoryCont::-webkit-scrollbar,
+.mainframe::-webkit-scrollbar {
+  /* display: none;
+     */
+  height: 0.54vh;
+  width: 0.54vh;
+}
+
+.CategoryList::-webkit-scrollbar-thumb,
+.PriceMenu::-webkit-scrollbar-thumb,
+.StoryCont::-webkit-scrollbar-thumb,
+.mainframe::-webkit-scrollbar-thumb {
+  background: var(--grey_light);
+  border-radius: 1.36vh;
+  height: 0.13vh;
+  width: 0.13vh;
+}

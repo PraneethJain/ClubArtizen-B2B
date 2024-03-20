@@ -1,0 +1,13 @@
+.mainbod{
+    display: flex;
+    width: 85vw;
+    margin: 2vh 7.5vw 2vh 7.5vw;
+    height: 70vh;
+    justify-content: space-evenly;
+    margin-top: 5vh;
+}
+
+.Image{
+    height: 100vh;
+    background-color: black;
+}

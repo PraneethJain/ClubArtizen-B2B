@@ -1,0 +1,120 @@
+.NavbarMain {
+    height: 9vh;
+    width: 100vw;
+}
+
+.TopBar {
+    height: 3vh;
+    background-color: var(--grey);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    opacity: 0.5;
+}
+
+.MidBar {
+    height: 6vh;
+    background-color: var(--grey);
+    position: fixed;
+    top: 0vh;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    opacity: 0.4;
+}
+
+.LowBar {
+    height: 9vh;
+    background-color: var(--grey);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+.Jaalidiv{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 9vh;
+    width: 100%;
+    background-image: url("./jaali.png");
+    background-size: 143.08vh;
+    background-repeat: repeat;
+    filter: brightness(120%) invert(95%) opacity(5%);
+    z-index: 4;
+}
+
+.NavCont{
+    display: flex;
+    width: 100vw;
+    height: 9vh;
+    z-index: 5;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.NavCont{
+    display: flex;
+    width: 100vw;
+    height: 9vh;
+    z-index: 5;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CAlogo{
+    margin: 0 2vw 0 2vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 10;
+    height: 6.5vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar{
+    color: black;
+    width: 60vw;
+    height: 5vh;
+    z-index: 10;
+    padding-left: 1.37vh;
+    border-radius: 2.73vh;
+    outline: 0.07vh solid rgb(197, 197, 197);
+    background-color: white;
+}
+
+.MyCart{
+    height: 7.5vh;
+    width: 8.5vh;
+    margin: 0 2vw 0 2vw;
+    background-image: url("./cart_image.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.searchform{
+    z-index: 10;
+    color: black;
+    display: flex;
+    width: 60vw;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.icon_search{
+    position: absolute;
+    right: 1.37vh;
+    z-index: 20;
+    cursor: pointer;
+    font-size: 4vh;
+}

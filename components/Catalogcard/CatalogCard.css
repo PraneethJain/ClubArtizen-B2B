@@ -1,0 +1,112 @@
+.productImage {
+  height: 25vh;
+  width: 25vh;
+  border-radius: 2.09vh;
+  z-index: 10;
+  transition: filter 1s ease; /* Transition for the filter property */
+}
+
+.imageContainer {
+  position: relative;
+  height: max-content;
+  width: 26vh;
+  border-radius: 2.09vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.imageContainer:hover .productImage {
+  filter: blur(8px);
+}
+
+.imageContainer:hover .textContainer {
+  filter: blur(8px);
+}
+
+.textContainer {
+  position: relative;
+  z-index: 20;
+  margin: 1vh 0 1vh 0;
+  color: black;
+  font-size: 2.15vh;
+  font-weight: 500;
+  background-color: var(--grey_light);
+  padding: 1vh;
+  border-radius: 2vh;
+  z-index: 10;
+  transition: filter 1s ease;
+}
+
+.backdropFilter {
+  border-radius: 2.09vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(121, 121, 121, 0.5);
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: opacity 1s ease; /* Transition for the opacity property */
+  opacity: 0; /* Initially hidden */
+}
+
+.imageContainer:hover .backdropFilter {
+  opacity: 1; /* Show backdropFilter on hover */
+}
+
+.inNum {
+  color: black;
+  width: 5vh;
+  font-size: 2vh;
+  height: 3vh;
+  padding-left: 0.5vh;
+  background-color: rgb(227, 227, 227);
+  border-radius: 0.59vh;
+}
+
+.cartImage {
+  width: 20%;
+  height: auto;
+  margin: 0 1vh 0 1vh;
+  cursor: pointer;
+  z-index: 15;
+}
+
+.priceContainer {
+  color: white;
+  margin: 1vh 0 1vh 2vh;
+  font-size: 1.7vh;
+  font-weight: 500;
+  z-index: 15;
+}
+
+.qtyText {
+  color: white;
+  font-size: 1.7vh;
+  font-weight: 500;
+}
+
+.cartContainer {
+  width: 25vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 15;
+}
+
+.moreText {
+  background-color: rgb(106, 106, 106);
+  color: white;
+  font-size: 2.18vh;
+  padding: 1vh;
+  cursor: pointer;
+  border-radius: 1.19vh;
+}
