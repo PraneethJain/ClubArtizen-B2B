@@ -53,21 +53,31 @@ const getProductsData = async () => {
     Product_Story_Title: string;
     Product_Story: string;
   }[] = [];
-  const url =
+  const url1 =
     "https://www.zohoapis.in/crm/v6/Products?fields=id%2CProduct_Name%2CUnit_Price%2CImage%2CDescription%2CCustomizations_Available%2CTax%2CTag%2CProduct_Story_Title%2CProduct_Story";
+  const url2 =
+    "https://www.zohoapis.in/crm/v6/Products?fields=id%2CProduct_Name%2CUnit_Price%2CImage%2CDescription%2CCustomizations_Available%2CTax%2CTag%2CProduct_Story_Title%2CProduct_Story&page=2";
+
   const headers = {
     Authorization: `Bearer ${access_token}`,
   };
 
   try {
-    const response = await fetch(url, {
+    const response1 = await fetch(url1, {
       headers,
       next: { revalidate: 24 * 60 * 60 },
     });
 
-    if (response.ok) {
-      const response_json = await response.json();
-      for (let info of response_json["data"]) {
+    const response2 = await fetch(url2, {
+      headers,
+      next: { revalidate: 24 * 60 * 60 },
+    });
+
+    if (response1.ok && response2.ok) {
+      const response1_json = await response1.json();
+      const response2_json = await response2.json();
+      const products_data = [...response1_json["data"], ...response2_json["data"]];
+      for (let info of products_data) {
         if (info["Image"] === null) {
           info["Image"] = "https://picsum.photos/300";
         }
@@ -85,7 +95,7 @@ const getProductsData = async () => {
 
         if (info["Product_Story_Title"] === null) {
           info["Product_Story_Title"] = "No Story Found";
-        } 
+        }
 
         if (info["Product_Story"] === null) {
           info["Product_Story"] = "";
@@ -94,7 +104,7 @@ const getProductsData = async () => {
         data.push(info);
       }
     } else {
-      console.error(`HTTP error while fetching item list: ${response.status}`);
+      console.error(`HTTP error while fetching item list: ${response1.status} and ${response2.status}`);
     }
   } catch (error) {
     console.error(`Network error: ${error}`);
