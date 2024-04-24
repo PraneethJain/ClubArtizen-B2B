@@ -83,6 +83,11 @@ export default function CatalogPage() {
                   return false;
                 }
               }
+
+              if (productName.includes("sample")) {
+                return false;
+              }
+
               return true;
             })
             .map(({ id, Product_Story, Product_Story_Title, Description, Unit_Price, Product_Name, Image, tags, Customizations_Available, GST, Customization_Comments, Customization_Chosen }) => {

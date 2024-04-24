@@ -109,6 +109,19 @@ const getProductsData = async () => {
   } catch (error) {
     console.error(`Network error: ${error}`);
   }
+
+  data.sort((p1, p2) => {
+    const a = p1.Image.includes("picsum");
+    const b = p2.Image.includes("picsum");
+    if (a && !b) {
+      return 1;
+    } else if (!a && b) {
+      return -1;
+    } else {
+      return 0;
+    }
+  })
+
   return data;
 };
 
