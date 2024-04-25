@@ -1,6 +1,7 @@
 .productImage {
   height: 25vh;
-  width: 25vh;
+  /* width: 25vh; */
+  object-fit: cover;
   border-radius: 2.09vh;
   z-index: 10;
   transition: filter 1s ease; /* Transition for the filter property */
