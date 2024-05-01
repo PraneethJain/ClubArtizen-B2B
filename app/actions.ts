@@ -68,43 +68,43 @@ const getProductsData = async () => {
       next: { revalidate: 24 * 60 * 60 },
     });
 
-    const response2 = await fetch(url2, {
-      headers,
-      next: { revalidate: 24 * 60 * 60 },
-    });
-
-    if (response1.ok && response2.ok) {
-      const response1_json = await response1.json();
+    // console.log(response1);
+    const response1_json = await response1.json();
+    let products_data = response1_json["data"];
+    if (response1_json["info"]["more_records"]) {
+      const response2 = await fetch(url2, {
+        headers,
+        next: { revalidate: 24 * 60 * 60 },
+      });
       const response2_json = await response2.json();
-      const products_data = [...response1_json["data"], ...response2_json["data"]];
-      for (let info of products_data) {
-        if (info["Image"] === null) {
-          info["Image"] = "https://picsum.photos/300";
-        }
-        if (info["Customizations_Available"] === null) {
-          info["Customizations_Available"] = [];
-        }
-        info["Customization_Comments"] = "None"
-        info["Customization_Chosen"] = ""
-        info["tags"] = info["Tag"].map(({ name }: { name: string }) => name);
+      products_data = [...response1_json["data"], ...response2_json["data"]];
+    }
 
-        info["GST"] = 18.0;
-        for (let taxrate of info["Tax"]) {
-          info["GST"] = parseFloat(taxrate.value.match(/\d{1,2}\.\d{1,2}/)[0]);
-        }
-
-        if (info["Product_Story_Title"] === null) {
-          info["Product_Story_Title"] = "No Story Found";
-        }
-
-        if (info["Product_Story"] === null) {
-          info["Product_Story"] = "";
-        }
-
-        data.push(info);
+    for (let info of products_data) {
+      if (info["Image"] === null) {
+        info["Image"] = "https://picsum.photos/300";
       }
-    } else {
-      console.error(`HTTP error while fetching item list: ${response1.status} and ${response2.status}`);
+      if (info["Customizations_Available"] === null) {
+        info["Customizations_Available"] = [];
+      }
+      info["Customization_Comments"] = "None";
+      info["Customization_Chosen"] = "";
+      info["tags"] = info["Tag"].map(({ name }: { name: string }) => name);
+
+      info["GST"] = 18.0;
+      for (let taxrate of info["Tax"]) {
+        info["GST"] = parseFloat(taxrate.value.match(/\d{1,2}\.\d{1,2}/)[0]);
+      }
+
+      if (info["Product_Story_Title"] === null) {
+        info["Product_Story_Title"] = "No Story Found";
+      }
+
+      if (info["Product_Story"] === null) {
+        info["Product_Story"] = "";
+      }
+
+      data.push(info);
     }
   } catch (error) {
     console.error(`Network error: ${error}`);
@@ -120,7 +120,7 @@ const getProductsData = async () => {
     } else {
       return 0;
     }
-  })
+  });
 
   return data;
 };
@@ -307,8 +307,7 @@ const sendOTP = async (to: string) => {
       from: from_email,
       to,
       subject: "ClubArtizen Login OTP",
-      text:
-        `Thank you for your interest in Club Artizen and for choosing to purchase gifts that benefit both the community and the environment.\n
+      text: `Thank you for your interest in Club Artizen and for choosing to purchase gifts that benefit both the community and the environment.\n
 Please use the verification code below to sign in.
 
 ${OTP}
