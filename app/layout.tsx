@@ -5,10 +5,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | ClubArtizen B2B",
-    default: "ClubArtizen B2B",
+    template: "%s | ClubArtizen Bulk Gifting",
+    default: "ClubArtizen Bulk Gifting",
   },
-  description: "ClubArtizen B2B",
+  description: "ClubArtizen Bulk Gifting",
 };
 export default function RootLayout({
   children,
