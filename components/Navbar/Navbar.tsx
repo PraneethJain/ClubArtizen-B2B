@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ searchValue, setSearchValue }) => {
       <div className="Jaalidiv"></div>
       <div className="NavCont">
         <div className="CAlogo">
-          <Link href={{ pathname: "/catalog" }}>
+          <Link href={{ pathname: "/home" }}>
             <Image
               src={logo_img}
               alt="logo"
