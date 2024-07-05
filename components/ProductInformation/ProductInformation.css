@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700,900");
 
 .mainframe {
-    flex: 1;
+  flex: 1;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -178,4 +178,16 @@
   border-radius: 1.36vh;
   height: 0.13vh;
   width: 0.13vh;
+}
+
+@media (max-width: 600px) {
+  .Categories{
+    height: 7vh;
+    padding-left: 0;
+  }
+  .StockForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
