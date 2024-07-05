@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
 
 .mainLogo {
   aspect-ratio: 1/1;
@@ -16,41 +15,30 @@
   width: 100vw;
 }
 
-.mainTitle {
-  font-family: "Palanquin", sans-serif;
-  color: black;
-  font-weight: 800;
-  font-size: 17vh;
-  z-index: 10;
-}
-
 .subTitle {
-  font-family: "Pacifico", cursive;
-  font-size: 4vh;
-  z-index: 10;
-}
-
-.searchbar {
+  text-align: center;
+  line-height: 10vh;
+  margin-bottom: 5vh;
+  font-family: "Sansita", sans-serif;
+  font-weight: 800;
   color: black;
-  width: 60vw;
-  height: 5vh;
   z-index: 10;
-  padding-left: 1.37vh;
-  border-radius: 2.73vh;
-  outline: 0.07vh solid rgb(197, 197, 197);
-  background-color: white;
+  width: 36vw;
+  font-style: italic;
+  font-size: 8vh;
 }
 
-.icon_search {
-  position: absolute;
-  right: 1.37vh;
-  z-index: 20;
-  cursor: pointer;
-  font-size: 4vh;
+.textTitle {
+  text-align: center;
+  z-index: 10;
+  color: black;
+  font-size: 2.5vh;
+  width: 40vw;
+
 }
 
 .backgroundImage {
-  filter: opacity(0.35);
+  filter: opacity(0.15);
   height: 90vh;
   position: absolute;
   left: 0;
@@ -59,26 +47,81 @@
 }
 
 .backgroundImage2 {
-  filter: opacity(0.35);
+  filter: opacity(0.15);
   position: absolute;
   right: 0;
   top: 0;
   z-index: 5;
 }
 
+.workedWith{
+  margin-top: 7vh;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoCompBE{
+  height: 8vh;
+  width: 10vh;
+}
+.logoCompAZ{
+  height: 6vh;
+  width: 9vh;
+}
+.logoCompSRM{
+  height: 6vh;
+  width: 6vh;
+}
+.logoCompIT{
+  height: 8vh;
+  width: 8vh;
+}
+.logoCompAIC{
+  height: 6vh;
+  width: 11vh;
+}
+
+.Companies{
+  display: flex;
+}
+.Companies>*{
+  margin-left: 2vh;
+}
+
 @media screen and (max-width: 1400px) {
   .mainTitle {
     font-size: 6vh;
   }
+  .mainFrame{
+    overflow: hidden;
+  }
+
   .backgroundImage {
     width: 80vw;
     height: 60vw;
   }
+
   .subTitle {
-    font-size: 2vh;
+    line-height: 5vh;
+    font-size: 3vh;
+    width: 60vw;
+    margin-bottom: 3vh;
   }
+
+  .textTitle {
+    font-size: 2vh;
+    width: 80vw;
+  }
+
   .backgroundImage2 {
     width: 70vw;
     height: 40vw;
+  }
+  .workedWith{
+    margin-left: 2vh;
+    width: 100vw;
+    overflow: scroll;
   }
 }

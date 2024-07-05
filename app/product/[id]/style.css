@@ -11,5 +11,10 @@
 @media (max-width: 600px) {
   .mainbod {
     flex-direction: column; /* Change to column layout on screens less than 600px wide */
+    height: max-content;
+    margin-bottom: 10vh;
+  }
+  .Image{
+    margin-bottom: 5vh;
   }
 }

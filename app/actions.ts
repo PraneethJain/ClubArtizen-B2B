@@ -285,11 +285,13 @@ const sendOTP = async (to: string) => {
   const from_password = process.env["smtp_password"];
 
   const transport = nodemailer.createTransport({
-    service: "gmail",
+    host: 'smtppro.zoho.in',
+    port: 465,
+    secure: true,
     auth: {
       user: from_email,
-      pass: from_password,
-    },
+      pass: from_password
+    }
   });
 
   try {

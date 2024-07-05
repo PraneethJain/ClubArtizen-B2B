@@ -37,11 +37,6 @@ const ProductPage = async ({ searchParams }: SearchParams) => {
       <div className="mainbod">
         <Image
           sizes="100vw"
-          style={{
-            width: 'auto',
-            height: '100%',
-            flex: 1,
-          }}
           width={500}
           height={300}
           src={image_src} alt={title} className="Image" />
